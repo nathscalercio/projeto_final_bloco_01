@@ -87,12 +87,12 @@ function cadastrarProduto(): void {
 
 function atualizarProduto(): void {
   const id = Input.questionInt("Digite o ID do produto: ");
-  console.log(`🔧 Atualização do produto ${id} (Etapa 03: Controller).`);
+  console.log(`Atualização do produto ${id} (Etapa 03: Controller).`);
 }
 
 function deletarProduto(): void {
   const id = Input.questionInt("Digite o ID do produto: ");
-  console.log(`🔧 Deletar produto ${id} (Etapa 03: Controller).`);
+  console.log(`Deletar produto ${id} (Etapa 03: Controller).`);
 }
 
 function keyPress(): void {
@@ -110,3 +110,4 @@ function sobre(): void {
 
 
 main();
+
