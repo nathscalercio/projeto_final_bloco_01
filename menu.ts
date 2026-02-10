@@ -103,9 +103,10 @@ function sobre(): void {
   console.log("*****************************************************");
   console.log("Projeto Final Bloco 01 - Livraria SCAR");
   console.log("Desenvolvido por: Nathalia Macedo");
-  console.log("GitHub: https://github.com/SEU_GITHUB_AQUI");
+  console.log("GitHub: https://github.com/nathscalercio");
   console.log("E-mail: nathscalercio@gmail.com");
   console.log("*****************************************************");
 }
+
 
 main();
