@@ -1,5 +1,9 @@
+import { ProdutoController } from "./src/controller/ProdutoController";
+import { Livro } from "./src/model/Livro";
 import { colors } from "./src/util/Colors_temp";
 import { Input } from "./src/util/Input";
+
+const livros = new ProdutoController();
 
 export function main(): void {
   let opcao: number;
@@ -68,31 +72,38 @@ export function main(): void {
 }
 
 function listarTodos(): void {
-  console.log("Funcionalidade em desenvolvimento (Etapa 03: Controller).");
+  livros.listarTodos();
 }
 
 function listarPorId(): void {
-  const id = Input.questionInt("Digite o ID do produto: ");
-  console.log(`Buscar produto pelo ID ${id} (Etapa 03: Controller).`);
+  const id = Input.questionInt("Digite o ID do livro: ");
+  livros.procurarPorId(id);
 }
 
-function cadastrarProduto(): void {
+  function cadastrarProduto(): void {
   const titulo = Input.question("Digite o título do livro: ");
-  const autor = Input.question("Digite o autor: ");
   const preco = Input.questionFloat("Digite o preço: ");
+  const autor = Input.question("Digite o autor: ");
+  const editora = Input.question("Digite a editora: ");
 
-  console.log("Cadastro em desenvolvimento (Etapa 03: Controller).");
-  console.log(`Dados anexados -> Título: ${titulo} | Autor: ${autor} | Preço: ${preco}`);
+  const livro = new Livro(0, titulo, preco, autor, editora);
+  livros.cadastrar(livro);
 }
 
 function atualizarProduto(): void {
-  const id = Input.questionInt("Digite o ID do produto: ");
-  console.log(`Atualização do produto ${id} (Etapa 03: Controller).`);
+  const id = Input.questionInt("Digite o ID do livro: ");
+  const titulo = Input.question("Digite o título do livro: ");
+  const preco = Input.questionFloat("Digite o preço: ");
+  const autor = Input.question("Digite o autor: ");
+  const editora = Input.question("Digite a editora: ");
+
+  const livro = new Livro(id, titulo, preco, autor, editora);
+  livros.atualizar(livro);
 }
 
 function deletarProduto(): void {
-  const id = Input.questionInt("Digite o ID do produto: ");
-  console.log(`Deletar produto ${id} (Etapa 03: Controller).`);
+  const id = Input.questionInt("Digite o ID do livro: ");
+  livros.deletar(id);
 }
 
 function keyPress(): void {

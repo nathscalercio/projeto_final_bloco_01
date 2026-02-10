@@ -30,7 +30,7 @@ export abstract class Produto {
 
   public visualizar(): void {
     console.log(colors.fg.magenta, "\n==============================", colors.reset);
-    console.log("Dados do Produto");
+    console.log("Dados do Livro");
     console.log(`ID: ${this.id}`);
     console.log(`Título: ${this.titulo}`);
     console.log(`Preço: R$ ${this.preco.toFixed(2)}`);
